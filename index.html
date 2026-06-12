@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Durgesh Jewels – Timeless Gems & Jewellery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo" onclick="navigate('home')">
+      <span class="logo-text">Durgesh Jewels</span>
+      <span class="logo-sub">Est. Jaipur · Since 1996</span>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav" id="mainNav">
+    <ul id="navList">
+      <li><a href="#" onclick="navigate('home')" id="nav-home">Home</a></li>
+      <li><a href="#" onclick="navigate('shop')" id="nav-shop">Shop</a></li>
+      <li><a href="#" onclick="navigate('about')" id="nav-about">About Us</a></li>
+      <li><a href="#" onclick="navigate('contact')" id="nav-contact">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Certified Gemstones & Fine Jewellery</span>
+      <h1 class="hero-title">Timeless <em>Beauty</em><br>from Jaipur</h1>
+      <p class="hero-sub">Handpicked gemstones & artisan jewellery crafted for those who<br>appreciate the extraordinary.</p>
+      <div class="hero-btns">
+        <button class="btn btn-hero-gold btn" onclick="navigate('shop')">
+          <i class="fas fa-gem"></i> Explore Collection
+        </button>
+        <button class="btn btn-hero-outline btn" onclick="navigate('about')">
+          Our Story
+        </button>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <div class="section" style="padding-top:0">
+    <p class="section-sub" style="margin-bottom:8px;letter-spacing:.2em;font-size:11px;text-transform:uppercase;color:var(--gold)">Bestsellers</p>
+    <h2 class="section-title">Our Most Loved Pieces</h2>
+    <div class="divider"></div>
+    <div class="products-grid" id="home-best"></div>
+    <div class="center-btn">
+      <button class="btn btn-outline" onclick="navigate('shop')">View All Products &nbsp;<i class="fas fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <div class="banner">
+    <div class="banner-content">
+      <span class="banner-eyebrow">Our Promise</span>
+      <h2>Every gem hand-selected from the world's finest mines</h2>
+      <p>From Colombia's vivid emeralds to Sri Lanka's royal sapphires — we source only the rarest and most beautiful.</p>
+      <button class="btn btn-white btn" onclick="navigate('about')">Our Story &nbsp;<i class="fas fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-sub" style="margin-bottom:8px;letter-spacing:.2em;font-size:11px;text-transform:uppercase;color:var(--gold)">Just In</p>
+    <h2 class="section-title">Instagram Posts</h2>
+    <div class="divider"></div>
+    <div class="instagram-grid" id="home-new"></div>
+
+  </div>
+
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div><div class="stat-num">30+</div><div class="stat-lbl">Years Experience</div></div>
+      <div><div class="stat-num">10k+</div><div class="stat-lbl">Happy Clients</div></div>
+      <div><div class="stat-num">50+</div><div class="stat-lbl">Countries Shipped</div></div>
+      <div><div class="stat-num">5k+</div><div class="stat-lbl">Gems Sold</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-shop">
+  <div class="shop-hero">
+    <p class="breadcrumb">Home &rsaquo; Shop</p>
+    <h1>Our Collection</h1>
+    <p style="font-size:14px;color:var(--muted);margin:8px 0 28px;">Certified gemstones &amp; handcrafted jewellery from Jaipur</p>
+    <div class="shop-filters">
+      <button class="filter-btn active" onclick="filterProducts('all',this)">All</button>
+      <button class="filter-btn" onclick="filterProducts('gemstones',this)">Gemstones</button>
+      <button class="filter-btn" onclick="filterProducts('jewellery',this)">Jewellery</button>
+      <button class="filter-btn" onclick="filterProducts('emerald',this)">Emerald</button>
+      <button class="filter-btn" onclick="filterProducts('sapphire',this)">Sapphire</button>
+      <button class="filter-btn" onclick="filterProducts('ruby',this)">Ruby</button>
+      <button class="filter-btn" onclick="filterProducts('diamond',this)">Diamond</button>
+    </div>
+  </div>
+  <div class="section">
+    <div class="products-grid" id="shop-grid"></div>
+  </div>
+</div>
+
+<div class="page" id="page-about">
+  <div class="about-hero">
+    <div class="about-hero-content">
+      <span style="display:block;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:18px">Est. 1996 · Jaipur</span>
+      <h1>Our Story</h1>
+      <p> Generations of passion for the world's finest gemstones, born in the gem city of Jaipur.</p>
+    </div>
+  </div>
+
+  <div class="about-story">
+    <div class="about-story-text">
+      <span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px">A Legacy of Excellence</span>
+      <h2>Crafted with passion since 1996</h2>
+      <div class="divider" style="margin:0 0 28px"></div>
+      <p>
+At Durgesh Jewels, our journey began in 1996 with a dream, strong determination, and a passion for the world of gemstones. Founded by my father from humble beginnings, the company was built on the values of honesty, hard work, trust, and exceptional quality.
+
+With years of dedication and deep knowledge of gemstones, he earned the confidence of every customer by offering authenticity and excellence in every piece. What started as a small vision gradually became a trusted name, carrying forward a legacy of craftsmanship, tradition, and commitment.
+
+Today, Durgesh Jewels proudly continues that legacy by blending timeless traditions with modern elegance. Every gemstone reflects our passion, heritage, and dedication to delivering beauty, quality, and trust to our customers.
+
+For us, jewellery is not just an ornament — it is a symbol of emotions, culture, and timeless memories passed from one generation to another.</p>
+      
+      <button class="btn btn-gold" style="margin-top:16px" onclick="navigate('contact')">Get in Touch</button>
+    </div>
+  
+  </div>
+
+  <div class="values-section">
+    <div style="text-align:center;max-width:1200px;margin:0 auto">
+      <h2 class="section-title">What Sets Us Apart</h2>
+      <div class="divider"></div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-certificate"></i></div>
+          <h3>Certified Authenticity</h3>
+          <p>Every gemstone comes with a certificate from a recognised gemological laboratory ensuring 100% authenticity.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <h3>Ethically Sourced</h3>
+          <p>We work directly with trusted miners who adhere to responsible sourcing practices protecting people and environment.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-gem"></i></div>
+          <h3>Handpicked Quality</h3>
+          <p>Our gemologists hand-select every stone from the world's finest origins — Colombia, Sri Lanka, Tanzania and more.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="fas fa-headset"></i></div>
+          <h3>Expert Guidance</h3>
+          <p>From choosing the right stone for Jyotish to designing a bespoke piece, our experts guide you every step.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <div class="banner">
+    <div class="banner-content">
+      <span class="banner-eyebrow">Visit Us</span>
+      <h2>Find us at Johari Bazaar, Jaipur — the gem city of India</h2>
+      <p>We welcome you to visit our showroom and experience the beauty of our collection in person.</p>
+      <button class="btn btn-white btn" onclick="navigate('contact')">Contact Us &nbsp;<i class="fas fa-arrow-right"></i></button>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-contact">
+  <div class="shop-hero">
+    <p class="breadcrumb">Home &rsaquo; Contact Us</p>
+    <h1>Get in Touch</h1>
+    <p style="font-size:14px;color:var(--muted);margin-top:8px">We'd love to hear from you. Our team responds within 24 hours.</p>
+  </div>
+
+  <div class="contact-layout">
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <p>Whether you're looking for a specific gemstone, need advice on a custom piece, or simply want to know more about our collection — reach out!</p>
+
+      <div class="c-detail">
+        <div class="c-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <strong>Our Showroom</strong>
+          <span>Johari Bazaar, Jaipur<br>Rajasthan 302003, India</span>
+        </div>
+      </div>
+      <div class="c-detail">
+        <div class="c-detail-icon"><i class="fas fa-phone-alt"></i></div>
+        <div>
+          <strong>Call Us</strong>
+          <span>+91 63752 53841<br>Mon–Sat, 10am – 7pm IST</span>
+        </div>
+      </div>
+      <div class="c-detail">
+        <div class="c-detail-icon"><i class="fas fa-envelope"></i></div>
+        <div>
+          <strong>Email Us</strong>
+          <span>info@durgesh-jewels.com</span>
+        </div>
+      </div>
+      <div class="c-detail">
+        <div class="c-detail-icon"><i class="fab fa-whatsapp"></i></div>
+        <div>
+          <strong>WhatsApp</strong>
+          <span>+91 63752 53841<br>Quick responses during business hours</span>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <i class="fas fa-map-marked-alt"></i>
+        <span style="font-size:13px">Johari Bazaar, Jaipur</span>
+        <a href="https://maps.google.com?q=Johari+Bazaar+Jaipur" target="_blank">Open in Google Maps →</a>
+      </div>
+
+      <div style="margin-top:28px;display:flex;gap:12px">
+        <a class="socials" style="display:contents" href="https://www.instagram.com/durgesh_jewels?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><div style="width:40px;height:40px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--mid);font-size:15px;cursor:pointer;transition:all .2s" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--mid)'"><i class="fab fa-instagram"></i></div></a>
+        <a class="socials" style="display:contents" href="https://wa.me/916375253841?text=Hi%20Durgesh%20Jewels%2C%20I%20would%20like%20to%20know%20more%20about%20your%20jewellery." target="_blank" rel="noopener noreferrer"><div style="width:40px;height:40px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--mid);font-size:15px;cursor:pointer;transition:all .2s" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--mid)'"><i class="fab fa-whatsapp"></i></div></a>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+      <div class="form-success" id="contactSuccess">
+        <i class="fas fa-check-circle" style="color:var(--gold);margin-right:8px"></i>
+        Thank you! We'll get back to you within 24 hours.
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" id="cf-fname" placeholder="Durgesh"/>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" id="cf-lname" placeholder="Sharma"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="cf-email" placeholder="you@example.com"/>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" id="cf-phone" placeholder="+91 98765 43210"/>
+      </div>
+      <div class="form-group">
+        <label>Subject</label>
+        <select id="cf-subject">
+          <option value="">Select a topic…</option>
+          <option>Gemstone Enquiry</option>
+          <option>Custom Jewellery</option>
+          <option>Order / Shipping</option>
+          <option>Returns & Refunds</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea id="cf-message" rows="5" placeholder="Tell us what you're looking for…" style="resize:vertical"></textarea>
+      </div>
+      <button class="btn btn-gold" onclick="submitContact()">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div class="footer-logo">Durgesh Jewels</div>
+      <p>Purveyor of fine gemstones and handcrafted jewellery from the gem city of Jaipur, India. Est. 1996.</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/durgesh_jewels?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/916375253841?text=Hi%20Durgesh%20Jewels%2C%20I%20would%20like%20to%20know%20more%20about%20your%20jewellery." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a onclick="navigate('home')">Home</a></li>
+        <li><a onclick="navigate('shop')">Shop</a></li>
+        <li><a onclick="navigate('about')">About Us</a></li>
+        <li><a onclick="navigate('contact')">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-grid">
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Showroom</span>
+          <span>Johari Bazaar, Jaipur<br>Rajasthan 302003</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Phone</span>
+          <span>+91 63752 53841</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Email</span>
+          <span>info@durgesh-jewels.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Hours</span>
+          <span>Mon–Sat: 10am – 7pm</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright &copy; <span id="yr"></span> Durgesh Jewels. All Rights Reserved. &nbsp;|&nbsp; Designed with ♥ in Jaipur</p>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModalBtn()"><i class="fas fa-times"></i></button>
+    <div class="modal-img-col">
+      <img class="modal-img" id="modal-img" src="" alt=""/>
+    </div>
+    <div class="modal-info-col">
+      <div id="modal-badge"></div>
+      <h2 class="modal-name" id="modal-name"></h2>
+      <div class="modal-price" id="modal-price"></div>
+      <p class="modal-desc" id="modal-desc"></p>
+      <div class="modal-specs" id="modal-specs"></div>
+      <div class="modal-btns">
+  <button class="btn btn-gold" id="modal-whatsapp-btn">
+    <i class="fab fa-whatsapp"></i> WhatsApp Inquiry
+  </button>
+</div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
